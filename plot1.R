@@ -3,6 +3,7 @@ rm(list=ls())
 library(dplyr)
 
 filename <- "household_power_consumption.txt"
+filename_png <- "plot1.png"
 
 # Read the data file
 # data_HouseholdPower_Consumption <- read.table(filename, sep = ";", colClasses = c(rep("character", 2), rep("numeric", 7)))
@@ -25,9 +26,16 @@ data_HouseholdPower_Consumption <- data_HouseholdPower_Consumption %>%
 data_HouseholdPower_Consumption <- data_HouseholdPower_Consumption %>%
   filter(DateTime >= as.POSIXct("2007-02-01", format = "%Y-%m-%d") & DateTime < as.POSIXct("2007-02-03", format = "%Y-%m-%d"))
 
-# Create plot on screen device
-hist(data_HouseholdPower_Consumption$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
+# # Create plot on screen device
+# hist(data_HouseholdPower_Consumption$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
 
-# Copy the plot from display device to PNG file
-dev.copy(png, file = "plot1.png")
+# # Copy the plot from display device to PNG file
+# dev.copy(png, file = filename_png)
+# dev.print(width = 480, height = 480)
+# dev.off()
+
+# Create plot to PNG file
+png(file=filename_png, width=480, height=480)
+hist(data_HouseholdPower_Consumption$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
 dev.off()
+
