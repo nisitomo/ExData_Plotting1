@@ -41,7 +41,7 @@ data_HouseholdPower_Consumption <- data_HouseholdPower_Consumption %>%
 # with(data_HouseholdPower_Consumption, lines(DateTime, Sub_metering_1))
 # with(data_HouseholdPower_Consumption, lines(DateTime, Sub_metering_2, col = "red"))
 # with(data_HouseholdPower_Consumption, lines(DateTime, Sub_metering_3, col = "blue"))
-# legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex = .3)
+# legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex = 1, bty = "n")
 # # plot4
 # with(data_HouseholdPower_Consumption, plot(DateTime, Global_reactive_power, type = "l", xlab = "datetime", ylab = "Global_reactive_power"))
 
@@ -57,7 +57,7 @@ with(data_HouseholdPower_Consumption, plot(DateTime, Sub_metering_1, type = "n",
 with(data_HouseholdPower_Consumption, lines(DateTime, Sub_metering_1))
 with(data_HouseholdPower_Consumption, lines(DateTime, Sub_metering_2, col = "red"))
 with(data_HouseholdPower_Consumption, lines(DateTime, Sub_metering_3, col = "blue"))
-legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex = .3)
+legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex = 1, bty = "n")
 # plot4
 with(data_HouseholdPower_Consumption, plot(DateTime, Global_reactive_power, type = "l", xlab = "datetime", ylab = "Global_reactive_power"))
 dev.off()
